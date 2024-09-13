@@ -1,20 +1,46 @@
-# Project Explanation
-This repository houses the code I wrote in developing a data waehouse on students grades. This project took place as part of a module called 'Data Warehousing and Mining' where we were to design and develop a data warehouse of our choice.
+# Overview
+This repository contains the SQL code and documents relating to a data warehouse on students grades.
+The SQL syntax that these queries follow is _mysql_ as these were written using MySQL Workbench.
 
-I chose to implement a data warehouse on students grades as I wanted to deleop something practical that I felt there would be a practical need for. However, due to the sensitivity of this data, I could not get access to real data so proceeded with synthetic data that I generated to fulfil this purpose.
+---
+# Data
+Due to the sensitivity of student grade data, it was not possible to use real grade data for this project.
+The data used during this project was generated synthetically using randomisation and best guesses.
 
-# Warehouse development
-The delopment of this data warehouse involved:
-- Generating the data,
-- Creating a star schema,
-- Creating the data warehouse,
-- Populating the data warehouse.
+---
+# Folder Breakdown
+The folder structure runs through the following processes:
+- Step-by-step development of the data warehouse
+- OLAP queries run on the data warehouse
+- Documenting of this process
 
-The resulting data wareouhouse was based around a grade in the fact table and had the following dimensions:
-- Details on the student themselves,
-- The students residence details,
-- The students schools details,
-- Details on the subject studied,
-- The year the student was assessed.
+### [Designing the data warehouse](01__design_data_warehouse)
+This section covered designing the data warehouse, mainly:
+- Creating a star schema
 
-I could then running queries on this data warehouse to derive some interesting insights from it. While the results were based on synthetic data, these queries would hold true if the data warehouse was implemented on real student data.
+### [Creating the data warehouse](02__create_data_warehouse)
+This section covered creating the data warehouse tables in line with the designed star schema.
+The resulting data warehouse was based around a grade in the fact table and had the following dimensions:
+- Details on the student themselves
+- Details on the students residence
+- Details on the students school
+- Details on the subject studied
+- Year the student was assessed
+
+### [Populating the data warehouse with data](03__populate_data)
+This section covered populating the data warehouse with synthetic data, including:
+- Generating the data
+- Inserting the data into each table
+
+### [Querying the data warehouse](04__query_data)
+This section covered running OLAP queries on the data warehouse to derive insights from it.
+The main queries run were:
+- Times male students pass more higher level subjects than females in mixed schools in the province of 'Leinster'
+- Whether non-Irish people achieved more grades above 60% than Irish people in the years '2017' and '2018'
+
+### [Creating a report describing the process](05__report)
+This section covered reporting on the details of the project, mainly:
+- Project background
+- Warehouse star schema design
+- Discussion of the OLAP queries ran
+- The datasets returned by the queries
